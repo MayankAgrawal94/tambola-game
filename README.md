@@ -40,8 +40,8 @@ This project implements a Tambola (Bingo) game claim validator. The validator ch
 Clone the repository:
 
 ```sh
-git clone <repository-url>
-cd <repository-directory>
+git clone git@github.com:MayankAgrawal94/tambola-game.git
+cd tambola-game
 ```
 
 
