@@ -35,15 +35,19 @@ This project implements a Tambola (Bingo) game claim validator. The validator ch
 - **utils/logging.util.js**: Utility for logging test results with color coding.
 - **utils/terminalStyling.constant.js**: Defines terminal styling constants for colored output.
 
+## Prerequisites
+
+This project is built using JavaScript and does not require any external libraries. Ensure you have Node.js version 16 or higher installed.
+
 ## Installation
 
-Clone the repository:
+1. Clone the repository:
 
-```sh
-git clone git@github.com:MayankAgrawal94/tambola-game.git
-cd tambola-game
-```
-
+    ```sh
+    git clone git@github.com:MayankAgrawal94/tambola-game.git
+    cd tambola-game
+    ```
+2. Since no external libraries are used, you can directly run the tests or the main application without needing to run `npm install`.
 
 ## Usage
 To validate a Tambola claim, you can use the Main class from index.js.
