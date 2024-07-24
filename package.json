@@ -1,0 +1,17 @@
+{
+  "name": "tambola",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node tests/run.js"
+  },
+  "keywords": [
+    "game",
+    "tambola"
+  ],
+  "author": "Mayank Agrawal",
+  "license": "ISC"
+}
