@@ -195,4 +195,4 @@ If you have any suggestions or improvements, feel free to submit a pull request 
 
 ## Contact
 If you have any feedback, questions, or suggestions, feel free to reach out.
-connect me at `mnk.agrawal94@gmail.com` or can DM me on [LinkedIn](https://www.linkedin.com/in/er-mayank/).
+connect me at `jobs@mayankagrawal.co.in` or can DM me on [LinkedIn](https://www.linkedin.com/in/er-mayank/).
