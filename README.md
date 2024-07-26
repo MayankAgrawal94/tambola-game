@@ -24,6 +24,11 @@ The exercise requires [Node.js](https://nodejs.org/en/) to be installed. I recom
  - Full house: The ticket with all the 15 numbers crossed ﬁrst
  - Early ﬁve: The fastest ticket to have 5 numbers crossed
 
+## Game Rules
+
+1. System will only return whether a claim is accepted or rejected.
+1. A player's claim to victory is only valid if it is made immediately following the announcement of the number that completes their winning sequence.
+
 ## Examples
 
 1. Top row win
@@ -92,12 +97,6 @@ The exercise requires [Node.js](https://nodejs.org/en/) to be installed. I recom
         </tbody>
     </table>
 
-
-## Game Rules
-
-1. System will only return whether a claim is accepted or rejected.
-1. A player's claim to victory is only valid if it is made immediately following the announcement of the number that completes their winning sequence.
-
 ## Project Structure
 
 ```
@@ -106,16 +105,16 @@ The exercise requires [Node.js](https://nodejs.org/en/) to be installed. I recom
 │   ├── claimValidator.js
 │   ├── game.js
 │   └── ticket.js
-├── index.js
-├── package.json
-├── README.md
+├── utils
+|   ├── logging.util.js
+|   └── terminalStyling.constant.js
 ├── tests
 │   ├── base.js
 │   ├── run.js
 │   └── testCollection.js
-└── utils
-    ├── logging.util.js
-    └── terminalStyling.constant.js
+├── index.js
+├── package.json
+└── README.md
 ```
 
 
