@@ -2,6 +2,102 @@
 
 This project implements a Tambola (Bingo) game claim validator. The validator checks if a player's claim to victory is valid based on the announced numbers and the ticket configuration.
 
+## Prerequisites
+
+The exercise requires [Node.js](https://nodejs.org/en/) to be installed. I recommend using the LTS version >= 16.
+
+## Installation
+
+1. Clone the repository:
+
+    ```sh
+    git clone git@github.com:MayankAgrawal94/tambola-game.git
+    cd tambola-game
+    ```
+1. Since no external libraries are used, you can directly run the tests or the main application without needing to run `npm install`.
+
+## Winning pattern
+
+ - Top line: The ticket with all the numbers of the top row crossed fastest
+ -  Middle line: The ticket with all the numbers of the middle row crossed fastest
+ - Bottom line: The ticket with the numbers of the bottom row crossed fastest
+ - Full house: The ticket with all the 15 numbers crossed ﬁrst
+ - Early ﬁve: The fastest ticket to have 5 numbers crossed
+
+## Examples
+
+1. Top row win
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3" style="text-align: center;font-weight: bold;">Input</th>
+            </tr>
+            <tr>
+                <th>Ticket</th>
+                <th>Numbers announced</th>
+                <th>Claim being made</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4,16,_,_48,_63,76,_<br>7,_,23,38,_,52,_,_,80<br>9,_,25,_,_,56,64,_,83</td>
+                <td>90, 4, 46, 63, 89, 16, 76, 48</td>
+                <td>Top Row</td>
+            </tr>
+            <tr>
+                <td colspan="3" >&nbsp;</td> <!-- Blank row -->
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Output</td>
+                <td colspan="2">Accepted</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Explanation</td>
+                <td colspan="2">Winning pattern: 4, 63, 16, 48, 76</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+1. Top row win denied due to late claim
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3" style="text-align: center;font-weight: bold;">Input</th>
+            </tr>
+            <tr>
+                <th>Ticket</th>
+                <th>Numbers announced</th>
+                <th>Claim being made</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4,16,_,_,48,_,63,76,_<br>7,_,23,38,_,52,_,_,80<br>9,_,25,_,_,56,64,_,83</td>
+                <td>90, 4, 46, 63, 89, 16, 76, 48, 12</td>
+                <td>Top Row</td>
+            </tr>
+            <tr>
+                <td colspan="3" >&nbsp;</td> <!-- Blank row -->
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Output</td>
+                <td colspan="2">Rejected</td>
+            </tr>
+            <tr>
+                <td style="font-weight: bold;">Explanation</td>
+                <td colspan="2">The last announced number 12 does not complete the top
+                row</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+## Game Rules
+
+1. System will only return whether a claim is accepted or rejected.
+1. A player's claim to victory is only valid if it is made immediately following the announcement of the number that completes their winning sequence.
+
 ## Project Structure
 
 ```
@@ -34,20 +130,6 @@ This project implements a Tambola (Bingo) game claim validator. The validator ch
 - **tests/testCollection.js**: Contains the collection of test cases.
 - **utils/logging.util.js**: Utility for logging test results with color coding.
 - **utils/terminalStyling.constant.js**: Defines terminal styling constants for colored output.
-
-## Prerequisites
-
-This project is built using JavaScript and does not require any external libraries. Ensure you have Node.js version 16 or higher installed.
-
-## Installation
-
-1. Clone the repository:
-
-    ```sh
-    git clone git@github.com:MayankAgrawal94/tambola-game.git
-    cd tambola-game
-    ```
-2. Since no external libraries are used, you can directly run the tests or the main application without needing to run `npm install`.
 
 ## Usage
 To validate a Tambola claim, you can use the Main class from index.js.
